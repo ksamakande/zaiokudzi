@@ -1,0 +1,211 @@
+<! DOCTYPE html>
+<html>
+<head>
+	
+	<title> zaio challenge </title>
+	<link rel = "stylesheet" href = "styles.css">
+
+</head>
+
+<body>	
+<div id = "reset1">
+	<h1 class = "header"> HICKIES Originals </h1>
+
+	<p> <span class= "stars"> &#9733 &#9733 &#9733 &#9733 &#9733 </span> <span class = "review light"> 1,200 reviews </span> </p> 
+
+	<p> <span class = "price">$ <span id = "total">00.00</price> </span> <span class="light discount"><span id = "price">00.00</price> </span> <span class="light discount">25% OFF </span> </p>
+
+	<p class = "stars"> ONLINE EXCLUSIVE </p>
+	
+	<form>
+	
+		<p class= "color"> <span style=" font-weight: bold;"> COLOR:</span> <input type = "text" value="Your Colour" class = "mycolor" id = "display" > </p>
+		
+		<button type = "button" class = "round" style="background-color: red;" id = "10.51" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color:purple;" id = "19.99" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: black;" id = "30.88" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>
+ 		<button type = "button" class = "round" style="background-color: white;" id = "40.00" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: #e60000;" id = "25.00" value = "Electric red" onclick = "getElementById('display').value = this.value, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: yellow;" id = "15.55" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: mediumblue;" id = "17.20" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: darkgreen;" id = "18.99" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: khaki;"     id = "24.24" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>
+		<button type = "button" class = "round" style="background-color: #3399ff;" id = "11.52" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: lime;" id = "11.33" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>
+		
+		<br>
+		
+		<button type = "button" class = "round" style="background-color: magenta;" id = "12.87" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: chocolate;" id = "13.56" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>
+		<button type = "button" class = "round" style="background-color: seagreen;" id = "14.99" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>
+		<button type = "button" class = "round" style="background-color: grey;" id = "15.00" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: brown;" id = "36.20" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round"style="background-color: aqua;" id = "31.31" onclick = "getElementById('display').value = this.style.backgroundColor, getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button> 
+		<button type = "button" class = "round" style="background-color: silver;" id = "18.00" onclick = "getElementById('display').value = this.style.backgroundColor , getElementById('myColor').value=this.style.backgroundColor, getElementById('price').innerHTML=this.id"> </button>  
+		
+		<p> <strong>Size Guide</strong> </p>
+
+		<p> <strong> Your Custom Fit </strong> </p>
+
+		<p> <input type = "text" value="0" class = "output" id = "result">  
+		<input type="button" id = "cOut" value = "Add to Cart" class = "checkout" onclick = "chck()" data-toggle = "modal" data-target = "modal1" > </button> </p>
+	
+		
+	</form>
+	
+	<hr>
+
+	<p> DETAILS </p>
+	<p id = 'clrs', onclick = "plus()"> </p>
+
+	<hr> <br>
+
+	<footer> Need help? <br> <br> Shipping and Returns 
+	
+	</footer>
+
+	<div class = "modal" id = "modal1" data-animation ="slideInOutLeft" role = "dialog">
+	<div class= "add" id = "add" onclick = "mr()">
+		<p> Please add the quantity of the item you have selected </p>
+		<br> <br>
+		</span> <input type = "text" id = "myColor" style="border: none;">
+		
+		<button class = "popup" id = "minus" onclick="minus()" > &minus; </button>
+		<input type = "text" value="0" class = "output" id = "quantity">
+		<button class = "popup" id = "plus" onclick = "plus()"> + </button>
+		<br> <br>
+		<p style= "text-align: center;">
+		<button class = "finalize" style = "background-color: green;" onclick = "agree()"> Agree </button>
+		<button class = "finalize" style = "background-color: red;" onclick = "document.getElementById('modal1').style.display='none', cancel()"> Cancel </button>
+		</p>
+	</div> 
+	</div>
+<form>
+	<div class = "modal" id = "modal2")
+		<br>
+		<h1> THANK YOU FOR SHOPPING WITH US </h1>
+		<div class = "contents" id = "content"> </div>
+		<button input type ="submit" class = "checkout">PAY</button >
+	</div>
+</form>
+</div>
+<script>
+var colors=[];
+var totalPrice =0;
+	
+	function plus(){
+		if(document.getElementById('display').value !="Your Colour"){
+		document.getElementById('quantity').value=Number(document.getElementById('quantity').value) + 1;
+		var btwn = document.getElementById('display').value;
+		var pri =  document.getElementById('price').innerHTML;
+		var array1=[btwn,pri];
+		colors.push(array1);
+		//document.getElementById('clrs').innerHTML += "<button type = 'button' class = 'round' style='background-color: ".concat(btwn, ";' id = '10' onclick = \"getElementById('display').value = this.style.backgroundColor\"> </button>");}
+	}	
+	}
+
+	function minus(){
+		if(Number(document.getElementById('quantity').value)>0){
+		var btwn = document.getElementById('display').value;
+		var d =remov(btwn, colors);
+		colors=d;
+		document.getElementById('quantity').value=colors.length;
+		}
+	}
+	
+	function agree(){
+		if(document.getElementById('quantity').value>0){
+		document.getElementById('total').innerHTML = totalPrice.toFixed(2);;
+		document.getElementById('result').value=colors.length;
+		document.getElementById('add').style.display = 'none';
+		document.getElementById('cOut').value="Check out Now";}
+		}
+	
+	
+		function chck(){
+			if(document.getElementById('cOut').value!="Check out Now"){
+				document.getElementById('modal1').style.display='block';
+				document.getElementById('myColor').value=document.getElementById('display').value;
+				//document.getElementById("modal1").classList.add("is-visible");
+				}
+		else {
+			document.getElementById('modal2').style.display = 'block';
+			var k = 1;
+			document.getElementById("content").innerHTML="";
+			for(var i = 0; i< colors.length;  i++){
+			if(i+1< colors.length){
+						if(colors[i][0]==colors[i+1][0]){
+											k+=1;
+										}
+						else{
+							document.getElementById("content").innerHTML= document.getElementById("content").innerHTML.concat("<p class ='stars'>", k, " *" ,colors[i][0]," @ $", colors[i][1], "</p>")
+							k=1;
+						    }
+
+					      }
+
+			else{document.getElementById("content").innerHTML= document.getElementById("content").innerHTML.concat("<p class ='stars'>",k, " *" ,colors[i][0]," @ $", colors[i][1], "</p>");}
+								}
+	
+		 }
+		}
+
+	function cancel(){
+		//document.getElementById('reset1').reset();
+		//document.getElementById('display').value ="Your Colour"; 
+		document.getElementById('quantity').value=0;
+		//document.getElementById('clrs').innerHTML='';
+		colors=[];
+		}
+	
+	function mr(){
+		document.getElementById('clrs').innerHTML='';
+		colors.sort();
+		totalPrice=0;
+		for (var i = 0; i<colors.length;i++){
+			var btw = colors[i][0];
+			totalPrice += Number(colors[i][1]);
+			
+			if(btw== "Electric red"){btw="#e60000";}
+			document.getElementById('clrs').innerHTML += "<button type = 'button' disabled class = 'round' style='background-color: ".concat(btw, ";' id = '10' onclick = \"getElementById('display').value = this.style.backgroundColor\"> </button>");
+						}
+		}
+	function remov(x,y){
+		var s = [];
+		var z = 0;
+		for(var i =0; i< y.length;i++){
+			if(y[i][0] == x && z==0){
+			z=1;}
+			else{s.push(y[i]);}
+			}
+	return s.sort();
+	}
+	
+	
+		
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

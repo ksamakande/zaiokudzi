@@ -1,0 +1,85 @@
+body{
+font-family: arial;}
+
+.stars{padding-left: 6px;}
+
+.review {
+padding-left: 30px;
+}
+
+.light{
+font-weight: ligher;
+color: grey;
+}
+
+.price{
+color:red;
+font-size: 20px;
+font-weight: bold;
+}
+
+.discount{ 
+padding-left: 58px
+}
+
+.color{
+line-height: 2;
+font-size: 16px;}
+
+.checkout{
+background-color: black;
+color: white;
+border-radius: 20px;
+padding: 10px 40px;
+border: none;
+
+}
+
+.round{border-radius: 50%;
+padding:8px;
+margin: 8px 4px;
+cursor: pointer;
+border: none;
+}
+
+.output{
+border-radius: 32px;
+padding:4px;
+width: 32px;
+border-style: solid;
+text-align: center;
+pointer-events: none;
+
+}
+
+.mycolor{
+pointer-events: none;
+border: none;
+}
+
+.popup{
+background-color: black;
+color: white;
+font-size: 150%;
+border: none;
+border-radius: 50%;
+}
+
+
+#quantity{border: none;}
+
+.finalize {
+border-radius: 6px;
+
+}
+
+#price:before{content: '$'}
+
+.modal {
+  display:none;
+}
+
+.add{
+}
+
+
