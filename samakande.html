@@ -4,6 +4,7 @@
 	
 	<title> zaio challenge </title>
 	<link rel = "stylesheet" href = "styles.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 
@@ -48,7 +49,7 @@
 		<p> <strong> Your Custom Fit </strong> </p>
 
 		<p> <input type = "text" value="0" class = "output" id = "result">  
-		<input type="button" id = "cOut" value = "Add to Cart" class = "checkout" onclick = "chck()" data-toggle = "modal" data-target = "modal1" > </button> </p>
+		<input type="button" id = "cOut" value = "Add to Cart" class = "checkout btn btn-primary" onclick = "chck()" data-toggle = "modal"> </button> </p>
 	
 		
 	</form>
@@ -64,72 +65,102 @@
 	
 	</footer>
 
-	<div class = "modal" id = "modal1" data-animation ="slideInOutLeft" role = "dialog">
-	<div class= "add" id = "add" onclick = "mr()">
-		<p> Please add the quantity of the item you have selected </p>
-		<br> <br>
-		</span> <input type = "text" id = "myColor" style="border: none;">
-		
-		<button class = "popup" id = "minus" onclick="minus()" > &minus; </button>
-		<input type = "text" value="0" class = "output" id = "quantity">
-		<button class = "popup" id = "plus" onclick = "plus()"> + </button>
-		<br> <br>
-		<p style= "text-align: center;">
-		<button class = "finalize" style = "background-color: green;" onclick = "agree()"> Agree </button>
-		<button class = "finalize" style = "background-color: red;" onclick = "document.getElementById('modal1').style.display='none', cancel()"> Cancel </button>
-		</p>
-	</div> 
+	<div class = "modal" id = "modal1" role = "dialogue">
+		<div class= "modal-dialog" onclick = "mr()" >
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<h2 class = "modal-title"> Please add the quantity of the item you have selected </h2>
+					
+				</div>
+				<div class="modal-body">
+					</span> <input type = "text" id = "myColor" style="border: none;">
+					<button class = "popup" id = "minus" onclick="minus()" > &minus; </button>
+					<input type = "text" value="0" class = "output" id = "quantity">
+					<button class = "popup" id = "plus" onclick = "plus()"> + </button>
+					<br> <br>
+				</div>
+				<div class= "modal-footer">
+					<p style= "text-align: center;">
+					<button class = "finalize btn btn-secondary" data-dismiss="modal" style = "background-color: orange;"> Diff Clr </button>
+					<button class = "finalize" style = "background-color: green;" onclick = "agree()" data-dismiss="modal"> Agree </button>
+					<button class = "finalize btn btn-secondary" data-dismiss="modal" style = "background-color: red;" onclick = "cancel()"> Cancel </button>
+					</p>
+				</div>
+			</div>
+		</div> 
 	</div>
-<form>
-	<div class = "modal" id = "modal2")
-		<br>
-		<h1> THANK YOU FOR SHOPPING WITH US </h1>
-		<div class = "contents" id = "content"> </div>
-		<button input type ="submit" class = "checkout">PAY</button >
+
+	<div class = "modal" id = "modal2" role = "dialogue">
+		<div class= "modal-dialog">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<h2 class = "modal-title">THANK YOU FOR SHOPPING WITH US</h2>
+					
+				</div>
+				<div class="modal-body" id = "content">
+				</div>
+				<div class= "modal-footer">
+			<input type ="reset" class = "checkout" value ="PAY">
+				</div>
+			</div>
+		</div> 
 	</div>
-</form>
-</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+
 <script>
 var colors=[];
 var totalPrice =0;
 	
 	function plus(){
 		if(document.getElementById('display').value !="Your Colour"){
-		document.getElementById('quantity').value=Number(document.getElementById('quantity').value) + 1;
 		var btwn = document.getElementById('display').value;
 		var pri =  document.getElementById('price').innerHTML;
 		var array1=[btwn,pri];
 		colors.push(array1);
+		document.getElementById('result').value=colors.length;
+		document.getElementById('quantity').value=colors.length;
 		//document.getElementById('clrs').innerHTML += "<button type = 'button' class = 'round' style='background-color: ".concat(btwn, ";' id = '10' onclick = \"getElementById('display').value = this.style.backgroundColor\"> </button>");}
 	}	
+	else{alert("choose color");}
 	}
 
 	function minus(){
+		
 		if(Number(document.getElementById('quantity').value)>0){
 		var btwn = document.getElementById('display').value;
 		var d =remov(btwn, colors);
 		colors=d;
-		document.getElementById('quantity').value=colors.length;
+		document.getElementById('result').value=colors.length;
+		
 		}
 	}
 	
 	function agree(){
 		if(document.getElementById('quantity').value>0){
-		document.getElementById('total').innerHTML = totalPrice.toFixed(2);;
-		document.getElementById('result').value=colors.length;
-		document.getElementById('add').style.display = 'none';
+		document.getElementById('total').innerHTML = totalPrice.toFixed(2);
+		//document.getElementById('add').style.display = 'none';
 		document.getElementById('cOut').value="Check out Now";}
 		}
 	
 	
 		function chck(){
 			if(document.getElementById('cOut').value!="Check out Now"){
-				document.getElementById('modal1').style.display='block';
+				$("#modal1").modal("show");
+				//document.getElementById('modal1').style.display='block';
 				document.getElementById('myColor').value=document.getElementById('display').value;
-				//document.getElementById("modal1").classList.add("is-visible");
+				
 				}
 		else {
-			document.getElementById('modal2').style.display = 'block';
+			//document.getElementById('modal2').style.display = 'block';
+			$("#modal2").modal("show");
 			var k = 1;
 			document.getElementById("content").innerHTML="";
 			for(var i = 0; i< colors.length;  i++){
@@ -146,16 +177,16 @@ var totalPrice =0;
 
 			else{document.getElementById("content").innerHTML= document.getElementById("content").innerHTML.concat("<p class ='stars'>",k, " *" ,colors[i][0]," @ $", colors[i][1], "</p>");}
 								}
-	
+					document.getElementById("content").innerHTML= document.getElementById("content").innerHTML.concat("<p> TOTAL PRICE $",totalPrice.toFixed(2),"</p>");
 		 }
 		}
 
 	function cancel(){
-		//document.getElementById('reset1').reset();
 		//document.getElementById('display').value ="Your Colour"; 
 		document.getElementById('quantity').value=0;
 		//document.getElementById('clrs').innerHTML='';
 		colors=[];
+		document.getElementById('result').value=colors.length;
 		}
 	
 	function mr(){
@@ -169,6 +200,7 @@ var totalPrice =0;
 			if(btw== "Electric red"){btw="#e60000";}
 			document.getElementById('clrs').innerHTML += "<button type = 'button' disabled class = 'round' style='background-color: ".concat(btw, ";' id = '10' onclick = \"getElementById('display').value = this.style.backgroundColor\"> </button>");
 						}
+			document.getElementById('quantity').value=colors.length;
 		}
 	function remov(x,y){
 		var s = [];
@@ -184,7 +216,6 @@ var totalPrice =0;
 	
 		
 </script>
-
 </body>
 </html>
 
