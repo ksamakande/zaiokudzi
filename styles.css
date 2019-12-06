@@ -75,11 +75,4 @@ border-radius: 6px;
 
 #price:before{content: '$'}
 
-.modal {
-  display:none;
-}
-
-.add{
-}
-
 
